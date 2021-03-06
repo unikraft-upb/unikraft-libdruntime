@@ -43,6 +43,16 @@
 #include <float.h>
 #include <math.h>
 
+FILE * _stdin;
+FILE *_stdout;
+FILE *_stderr;
+
+void initStdIO(void)
+{
+	_stdin = stdin;
+	_stdout = stdout;
+	_stderr = stderr;
+}
 
 typedef __sigset_t	sigset_t;
 int sigfillset(sigset_t *set)
