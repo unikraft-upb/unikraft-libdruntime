@@ -75,6 +75,8 @@ GDCINCLUDES-y += $(LIBDRUNTIME_COMMON_INCLUDES-y)
 DMDINCLUDES-y += -I$(LIBDRUNTIME_DIR)/
 
 CFLAGS += -DDRUNTIME
+GDCFLAGS-y += -mmusl
+DMDFLAGS-y += -target=x86_64-unknown-openbsd-musl
 
 ################################################################################
 # Suppress flags
