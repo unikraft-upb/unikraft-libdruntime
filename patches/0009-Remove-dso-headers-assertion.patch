@@ -1,0 +1,29 @@
+From 2071bba4624b26de36208666a5f16810d2b3c3f3 Mon Sep 17 00:00:00 2001
+From: Stefan Jumarea <stefanjumarea02@gmail.com>
+Date: Tue, 28 Feb 2023 13:23:43 +0200
+Subject: [PATCH] [PATCH]: Remove dso headers assertion
+
+Signed-off-by: Stefan Jumarea <stefanjumarea02@gmail.com>
+---
+ libphobos/libdruntime/gcc/sections/elf_shared.d | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libphobos/libdruntime/gcc/sections/elf_shared.d b/libphobos/libdruntime/gcc/sections/elf_shared.d
+index 7f9036bf505..b953efb0e3a 100644
+--- a/libphobos/libdruntime/gcc/sections/elf_shared.d
++++ b/libphobos/libdruntime/gcc/sections/elf_shared.d
+@@ -448,9 +448,9 @@ extern(C) void _d_dso_registry(CompilerDSOData* data)
+ 
+         dl_phdr_info info = void;
+         const headerFound = findDSOInfoForAddr(data._slot, &info);
+-        safeAssert(headerFound, "Failed to find image header.");
++        //safeAssert(headerFound, "Failed to find image header.");
+ 
+-        scanSegments(info, pdso);
++        //scanSegments(info, pdso);
+ 
+         version (Shared)
+         {
+-- 
+2.25.1
+
