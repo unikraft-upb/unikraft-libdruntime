@@ -39,8 +39,3 @@ unsigned short bswap_16(unsigned short __x)
 }
 
 
-unsigned short htons(unsigned short n)
-{
-	union { int i; char c; } u = { 1 };
-	return u.c ? bswap_16(n) : n;
-}
