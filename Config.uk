@@ -1,12 +1,13 @@
 menuconfig LIBDRUNTIME
 	bool "D Runtime Library"
 	default n
+	select HAVE_DRUNTIME
 	select LIBUKALLOC
 	select LIBPOSIX_SYSINFO
 	select LIBPOSIX_USER
 	select LIBSYSCALL_SHIM
-	select LIBNEWLIBC
 	select LIBUKMMAP
+	select LIBMUSL
 	select LIBCOMPILER_RT
 	select LIBCOMPILER_RT_ATOMIC
 	select LIBUNWIND
@@ -17,4 +18,3 @@ menuconfig LIBDRUNTIME
 	select LIBBACKTRACE
 	select LIBLWIP
 	select LIBUCONTEXT
-
